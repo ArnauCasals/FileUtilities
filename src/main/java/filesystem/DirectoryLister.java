@@ -8,20 +8,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Date;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class DirectoryLister {
-
-    public static void main(String[] args) throws IOException {
-
-        if (args.length == 0) {
-            System.out.println("Please provide a TXT file.");
-            return;
-        }
-
-        File file = new File(args[0]);
-
-        readTxtFile(file);
-    }
 
 
     private static void listDirectory(File directory, String indentation, PrintWriter writer) {
@@ -59,4 +51,25 @@ public class DirectoryLister {
 
         reader.close();
     }
+    public static void serializeObject(Person person) throws IOException {
+
+        ObjectOutputStream output =
+                new ObjectOutputStream(new FileOutputStream("person.ser"));
+
+        output.writeObject(person);
+
+        output.close();
+    }
+    public static Person deserializeObject() throws IOException, ClassNotFoundException {
+
+        ObjectInputStream input =
+                new ObjectInputStream(new FileInputStream("person.ser"));
+
+        Person person = (Person) input.readObject();
+
+        input.close();
+
+        return person;
+    }
+
 }
