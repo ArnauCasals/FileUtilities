@@ -1,8 +1,12 @@
 package filesystem;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Date;
 import java.util.Arrays;
+
 
 public class DirectoryLister {
 
@@ -15,10 +19,16 @@ public class DirectoryLister {
 
         File directory = new File(args[0]);
 
-        listDirectory(directory, "");
+        try (PrintWriter writer = new PrintWriter(new FileWriter("directory-tree.txt"))) {
+
+            listDirectory(directory, "", writer);
+
+        } catch (IOException e) {
+            System.out.println("Error writing file: " + e.getMessage());
+        }
     }
 
-    private static void listDirectory(File directory, String indentation) {
+    private static void listDirectory(File directory, String indentation, PrintWriter writer) {
 
         File[] files = directory.listFiles();
 
@@ -30,12 +40,12 @@ public class DirectoryLister {
 
             Date lastModified = new Date(file.lastModified());
 
-            System.out.println(
+            writer.println(
                     indentation + type + " " + file.getName() + " " + lastModified
             );
 
             if (file.isDirectory()) {
-                listDirectory(file, indentation + "    ");
+                listDirectory(file, indentation + "    ", writer);
             }
         }
     }
