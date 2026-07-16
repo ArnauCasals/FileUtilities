@@ -1,99 +1,50 @@
-# File Utilities
+# Exercise 1 - Directory List
 
-**Description:**  
-This project contains several Java exercises to practice file and directory management, text file reading and writing, object serialization, and deserialization.
+## Description
 
-## 📌 Exercise Description
+This exercise consists of creating a Java application that lists the contents of a directory in alphabetical order.
 
-The project includes the following exercises:
+The program validates that the directory exists and that the provided path is a valid directory before displaying all files and folders sorted alphabetically.
 
-1. List the contents of a directory alphabetically.
-2. Display the complete directory tree recursively, indicating whether each item is a file or directory and showing its last modification date.
-3. Save the directory tree into a TXT file.
-4. Read any TXT file and display its contents on the console.
-5. Serialize a Java object into a `.ser` file and then deserialize it.
-
-## ✨ Features
-
-- Alphabetical directory listing.
-- Recursive directory tree traversal.
-- Save the directory structure to a TXT file.
-- Read any TXT file line by line.
-- Serialize and deserialize Java objects.
-
-## 🛠 Technologies
-
-- Java 26
-- Maven
-- IntelliJ IDEA
-- Java IO (`java.io`)
-
-## 🚀 Installation and Execution
-
-### Clone the repository
-
-```bash
-git clone https://github.com/ArnauCasals/FileUtilities.git
-```
-
-### Navigate to the project folder
-
-```bash
-cd FileUtilities
-```
-
-### Compile the project
-
-```bash
-mvn compile
-```
-
-### Run the application
-
-```bash
-mvn exec:java
-```
-
-### Run the tests
-
-```bash
-mvn test
-```
-
-## 💻 Manual Compilation
-
-Compile the Java source files:
-
-```bash
-javac -d out src/main/java/filesystem/*.java
-```
-
-Run the compiled application:
-
-```bash
-java -cp out filesystem.DirectoryLister .
-```
-
-To run the serialization example:
-
-```bash
-java -cp out filesystem.SerializationExample
-```
-
-## 📸 Demo
-
-Example output:
+## Project Structure
 
 ```text
-D src Mon Jul 13 2026
-    D main
-        D java
-            D filesystem
-                F DirectoryLister.java
+Exercise1
+├── Main.java
+├── DirectoryList.java
+└── DirectoryValidator.java
 ```
 
-## 🧩 Technical Notes
+## Features
 
-- The project uses **relative paths** instead of absolute paths.
-- `File.separator` is used to ensure compatibility across different operating systems.
-- The code is organized into separate classes, each with a single responsibility.
+- Validate that the directory exists.
+- Verify that the path is a directory.
+- List files and folders alphabetically.
+- Sort the directory contents using `Arrays.sort()`.
+
+## Example Directory
+
+```text
+TestDirectory
+├── Documents
+├── Photos
+├── file1.txt
+├── file2.txt
+└── file3.txt
+```
+
+## Example Output
+
+```text
+Documents
+Photos
+file1.txt
+file2.txt
+file3.txt
+```
+
+## Technologies
+
+- Java 21
+- Maven
+- IntelliJ IDEA
