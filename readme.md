@@ -159,3 +159,45 @@ F file3.txt - 16/07/2026 11:05
 - ✅ Directory (`D`) and file (`F`) identification
 - ✅ Last modification date display
 - ✅ Output saved to a TXT file
+
+
+## Exercise 4 - Read a TXT File
+
+### Description
+
+This exercise adds the functionality to read any TXT file and display its content on the console.
+
+The program validates that the selected file exists, checks that it is a TXT file, reads all its lines, and prints them to the console.
+
+### Implementation
+
+The solution is divided into:
+
+- `Main.java`: Starts the program and selects the TXT file to read.
+- `FileValidator.java`: Checks if the file exists, is a file, and has the `.txt` extension.
+- `FileReaderUtil.java`: Reads the TXT file and displays its content line by line on the console.
+
+### Example
+
+#### TXT File (`example.txt`)
+
+```text
+Hello,
+This is a text file.
+Exercise 4.
+```
+
+#### Console Output
+
+```text
+Hello,
+This is a text file.
+Exercise 4.
+```
+
+### Features
+
+- ✅ Reads any TXT file
+- ✅ Validates the selected file
+- ✅ Displays the file content on the console
+- ✅ Handles reading errors using exception handling
