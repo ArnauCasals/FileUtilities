@@ -43,12 +43,6 @@ file2.txt
 file3.txt
 ```
 
-## Technologies
-
-- Java 21
-- Maven
-- IntelliJ IDEA
-
 ## Exercise 2 - Recursive Directory Tree
 
 ### Description
@@ -106,12 +100,6 @@ F file3.txt - 16/07/2026 11:05
 
 This exercise extends the previous one. Instead of displaying the directory tree on the console, the program saves the result to a TXT file.
 
-The generated file contains the complete directory tree, ordered alphabetically at each level, indicating:
-
-- `D` for directories
-- `F` for files
-- The last modification date of each element
-
 ### Implementation
 
 The solution is divided into:
@@ -154,10 +142,6 @@ F file3.txt - 16/07/2026 11:05
 
 ### Features
 
-- ✅ Recursive directory traversal
-- ✅ Alphabetical sorting
-- ✅ Directory (`D`) and file (`F`) identification
-- ✅ Last modification date display
 - ✅ Output saved to a TXT file
 
 
@@ -201,3 +185,95 @@ Exercise 4.
 - ✅ Validates the selected file
 - ✅ Displays the file content on the console
 - ✅ Handles reading errors using exception handling
+
+
+## Exercise 5 - Object Serialization and Deserialization
+
+### Description
+
+This exercise demonstrates how to serialize a Java object into a `.ser` file and then deserialize it back into an object.
+
+The program creates a `Person` object, saves it to a binary file, reads it again, and displays the recovered object on the console.
+
+### Implementation
+
+The solution is divided into:
+
+- `Main.java`: Creates the object, serializes it, deserializes it, and displays the result.
+- `Person.java`: Represents the object to be serialized. It implements the `Serializable` interface.
+- `Serializer.java`: Handles the serialization and deserialization processes using `ObjectOutputStream` and `ObjectInputStream`.
+
+### Example
+
+#### Serialized Object
+
+```text
+Person
+- Name: Arnau
+- Age: 33
+```
+
+#### Console Output
+
+```text
+Person{name='Arnau', age=33}
+```
+
+### Features
+
+- ✅ Creates a serializable Java object
+- ✅ Serializes the object into a `.ser` file
+- ✅ Deserializes the object from the `.ser` file
+- ✅ Displays the recovered object on the console
+- ✅ Handles serialization and deserialization exceptions
+
+## Technologies
+
+- Java 21
+- Maven
+- IntelliJ IDEA
+
+## Project Structure
+
+```text
+FileUtilities
+├── TestDirectory
+│   ├── Documents
+│   │   ├── document1
+│   │   └── document2
+│   ├── Photos
+│   │   ├── image1
+│   │   └── image2
+│   ├── file1.txt
+│   ├── file2.text
+│   └── file3.txt
+├── directoryTree.txt
+├── example.txt
+├── pom.xml
+├── README.md
+└── src
+    └── main
+        └── java
+            └── Level1
+                ├── Exercise1
+                │   ├── DirectoryList.java
+                │   ├── DirectoryValidator.java
+                │   └── Main.java
+                ├── Exercise2
+                │   ├── DirectoryList.java
+                │   ├── DirectoryValidator.java
+                │   └── Main.java
+                ├── Exercise3
+                │   ├── DirectoryList.java
+                │   ├── DirectoryValidator.java
+                │   ├── FileWriterUtil.java
+                │   └── Main.java
+                ├── Exercise4
+                │   ├── FileReaderUtil.java
+                │   ├── FileValidator.java
+                │   └── Main.java
+                └── Exercise5
+                    ├── Main.java
+                    ├── Person.java
+                    └── Serializer.java
+```
